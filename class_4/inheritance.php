@@ -15,14 +15,14 @@ class Animal {
 // Derived class
 class Dog extends Animal {
     public function speak() {
-        return "Woof! My name is " . $this->name;
+        return "Woof! My name is " . $this->name."<br>";
     }
 }
 
 // Another derived class
 class Cat extends Animal {
     public function speak() {
-        return "Meow! My name is " . $this->name;
+        return "Meow! My name is " . $this->name."<br>";
     }
 }
 
