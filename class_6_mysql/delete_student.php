@@ -11,6 +11,7 @@ $sql = "DELETE FROM students WHERE id = ?";
 $statement = $connection->prepare($sql);
 $statement->bind_param("i", $id);
 $statement->execute();
+// mysqli_query($connection,"DELETE FROM students WHERE id = '$id'")
 
 // Check if the record was successfully deleted
 if ($statement->affected_rows > 0) {
