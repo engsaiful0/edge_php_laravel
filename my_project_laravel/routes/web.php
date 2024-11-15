@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::resource('products', ProductController::class);
+Route::resource('students', StudentController::class);
 
 // Route::get('/products', [ProductController::class, 'index'])->name('products.index'); // Show all products
 // Route::get('/products/create', [ProductController::class, 'create'])->name('products.create'); 

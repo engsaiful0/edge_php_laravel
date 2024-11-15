@@ -10,6 +10,7 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 
+
 <body class="antialiased">
     <h1>Products</h1>
     <a href="{{ route('products.create') }}">Add Product</a>
@@ -22,6 +23,9 @@
                 <th>Actions</th>
             </tr>
         </thead>
+        <?php 
+        echo "Hello world";
+        ?>
         <tbody>
             @foreach ($products as $product)
                 <tr>
