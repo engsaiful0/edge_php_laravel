@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\StudentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,19 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('products', ProductController::class);
-Route::resource('students', StudentController::class);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::get('/products', [ProductController::class, 'index'])->name('products.index'); // Show all products
-// Route::get('/products/create', [ProductController::class, 'create'])->name('products.create'); 
-// // Show form to create a new product
-// Route::post('/products', [ProductController::class, 'store'])->name('products.store');
-//  // Store new product
-// Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
-//  // Show a specific product
-// Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit'); 
-// // Show form to edit a product
-// Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
-//  // Update a specific product
-// Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
-//  // Delete a specific product
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
