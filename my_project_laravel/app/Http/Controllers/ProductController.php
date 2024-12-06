@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Product::paginate(1); // Display 10 products per page
+        $products = Product::paginate(2); // Display 10 products per page
         return view('products.index', compact('products'));
     }
 
@@ -33,7 +33,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
+             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
         ]);
 
         // Handle image upload and save to 'public/images/products' folder

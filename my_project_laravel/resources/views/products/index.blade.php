@@ -2,19 +2,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
-
-
 <body class="antialiased">
     <h1>Products</h1>
     <a href="{{ route('products.create') }}">Add Product</a>
-
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -56,8 +52,8 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-            {{ $products->links('pagination::bootstrap-4') }}
-        </div>
+        {{ $products->links('pagination::bootstrap-4') }}
+    </div>
 </body>
 
 </html>
