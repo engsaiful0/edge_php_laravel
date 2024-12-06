@@ -1,15 +1,7 @@
 <!-- resources/views/products/edit.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Product</title>
-    <!-- Local Bootstrap CSS -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-</head>
-<body class="antialiased">
+@section('content')
     <div class="container mt-5">
         <h1 class="mb-4">Edit Product</h1>
         <a href="{{ route('products.index') }}" class="btn btn-secondary mb-3">Back to Products</a>
@@ -44,5 +36,4 @@
 
     <!-- Local Bootstrap JS and dependencies -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-</body>
-</html>
+    @endsection
