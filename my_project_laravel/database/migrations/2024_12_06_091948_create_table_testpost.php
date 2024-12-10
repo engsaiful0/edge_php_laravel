@@ -11,16 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('table_testpost', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->decimal('price', 8, 2);
-            $table->string('image')->nullable()->after('stock'); // Add 'image' column after 'stock'
-            $table->integer('stock')->default(0);
+            $table->string("title");
+            $table->text("post_details");
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('table_testpost');
     }
 };
