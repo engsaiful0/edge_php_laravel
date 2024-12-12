@@ -23,10 +23,10 @@ class ProcessOrder implements ShouldQueue
     public function handle()
     {
         // Update order status to "processing"
-        $this->order->update(['status' => 'processing']);
+        $this->order->update(attributes: ['status' => 'processing']);
 
         // Simulate processing
-        sleep(5); // Simulate a delay
+        sleep(seconds: 5); // Simulate a delay
 
         // Update order status to "completed"
         $this->order->update(['status' => 'completed']);
