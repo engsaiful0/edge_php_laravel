@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('/orders', [OrderController::class, 'placeOrder']);
+Route::get('/orders/{id}/status', [OrderController::class, 'getOrderStatus']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

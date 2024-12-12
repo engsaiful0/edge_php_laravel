@@ -5,7 +5,6 @@
 @section('content')
     <h1>Products</h1>
     <a href="{{ route('products.create') }}">Add Product</a>
-
     <table class="table table-bordered">
         <thead>
             <tr>
