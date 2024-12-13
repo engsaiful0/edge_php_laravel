@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\ProductApiController;
+
+Route::get('/products', [ProductApiController::class, 'index']);         // GET all products
+Route::post('/products', [ProductApiController::class, 'store']);       // POST a new product
+Route::put('/products/{id}', [ProductApiController::class, 'update']);  // PUT update a product
+Route::delete('/products/{id}', [ProductApiController::class, 'destroy']); // DELETE a product
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
